@@ -3,7 +3,7 @@
 <div class="container mt-5">
   <div class="row">
     <div id="container">
-      <button id="blueButton">Summarize the blog</button>
+      <button id="blueButton" class="rounded-pill">Summarize the blog</button>
       <script>
         document
           .getElementById("blueButton")
@@ -24,7 +24,7 @@
         </header>
         <!-- Post content-->
         <section class="mb-5">
-          <p class="fs-5 mb-4"><%- post.desc %></p>
+          <p class="fs-5 mb-4 border border-secondary-subtle post_desc"><%- post.desc %></p>
         </section>
       </article>
     </div>

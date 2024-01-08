@@ -58,7 +58,7 @@ app.use('/users',require('./routes/users.js'));
 
 
 io.on("connection",function(socket){
-  console.log('User Connected');
+  console.log('User Connected') ;
 
   socket.on("new_comment",function(comment){
     io.emit("new_comment",comment);
@@ -113,7 +113,7 @@ socket.on("dislike", async function(data){
 
 });
 
-  const PORT=process.env.PORT||8080
+  const PORT=process.env.PORT||8084
   http.listen(PORT,()=>{
     console.log(`Server started on port ${PORT}`);
   })
