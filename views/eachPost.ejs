@@ -55,33 +55,38 @@
         <!-- Comment form-->
         <!-- Show/Hide Comment Form button -->
         <button id="show-comment-form" class="btn btn-primary mt-3">Add a Comment</button>
-        <form class="mb-4" id="comment-form" style="display:none;">
-          <input type="hidden" name="post_id" value="<%= post._id %>" />
-          <input
-            type="text"
-            name="username"
-            placeholder="Enter your name"
-            required
-            class="form-control mb-3"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your mail"
-            required
-            class="form-control mb-3"
-          />
+        <!-- <div class="list-group">
+          <div class="list-group-item list-group-item-action"> -->
+            <form class="mb-4" id="comment-form" style="display:none;">
+            <input type="hidden" name="post_id" value="<%= post._id %>" />
+            <input
+              type="text"
+              name="username"
+              placeholder="Enter your name"
+              required
+              class="form-control mb-3"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your mail"
+              required
+              class="form-control mb-3"
+            />
+  
+            <textarea
+              class="form-control"
+              name="comment"
+              required
+              rows="3"
+              placeholder="Join the discussion and leave a comment!"
+            ></textarea>
+  
+            <input type="submit" class="btn btn-primary mt-3" />
+          </form>
 
-          <textarea
-            class="form-control"
-            name="comment"
-            required
-            rows="3"
-            placeholder="Join the discussion and leave a comment!"
-          ></textarea>
-
-          <input type="submit" class="btn btn-primary mt-3" />
-        </form>
+          <!-- </div>
+        </div> -->
 
         <p class="com-status" style="color: green"></p>
      
@@ -93,7 +98,7 @@
                 post.comments = post.comments.reverse();
                 post.comments.forEach(function(comment){
                     %>
-                    <div class="d-flex mt-3">
+                    <div class="d-flex mt-3 list-group-item list-group-item-action">
                         <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                         <div class="ms-3">
                             <div class="fw-bold"><%= comment.username %></div>
